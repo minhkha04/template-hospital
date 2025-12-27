@@ -1,0 +1,18 @@
+.textarea-fixed {
+  resize: none;
+}
+
+/* Tăng kích thước radio và checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Đặc biệt cho Bootstrap form-check-input */
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
