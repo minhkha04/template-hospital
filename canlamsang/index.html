@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Cận lâm sàng</title>
+</head>
+
+<body
+    style="background-color: #e6f4ff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <div class="row" style="margin: 0; height: 100vh;">
+        <!-- slider -->
+        <div class="col-2"
+            style="background-color: #ffffff; padding-top: 10px; box-shadow: 2px 0 8px rgba(0,0,0,0.08); border-right: 1px solid #f0f0f0;">
+            <!-- infor hopital -->
+            <div style="padding: 5px; background-color: #e6f7ff; border-radius: 8px; border: 1px solid #91d5ff;">
+                <div class="d-flex">
+                    <div class="w-100">
+                        <p style="margin-bottom: 8px; font-size: 14px; color: #595959;"><strong>Phòng Khám:</strong>
+                            Phòng Khám Gan ABC</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p style="margin-bottom: 12px; font-size: 14px; color: #595959;"><strong>Bác sĩ:</strong>
+                                NGUYỄN VĂN A
+                            </p>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light p-0" type="button" id="userMenu"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg width="25px" height="25px" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill="#000000"
+                                                d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zm-23.424 64H446.72l-36.352 113.088-24.512 11.968a294.113 294.113 0 0 0-34.816 20.096l-22.656 15.36-116.224-25.088-65.28 113.152 79.68 88.192-1.92 27.136a293.12 293.12 0 0 0 0 40.192l1.92 27.136-79.808 88.192 65.344 113.152 116.224-25.024 22.656 15.296a294.113 294.113 0 0 0 34.816 20.096l24.512 11.968L446.72 896h130.688l36.48-113.152 24.448-11.904a288.282 288.282 0 0 0 34.752-20.096l22.592-15.296 116.288 25.024 65.28-113.152-79.744-88.192 1.92-27.136a293.12 293.12 0 0 0 0-40.256l-1.92-27.136 79.808-88.128-65.344-113.152-116.288 24.96-22.592-15.232a287.616 287.616 0 0 0-34.752-20.096l-24.448-11.904L577.344 128zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                                    <li><a class="dropdown-item" href="#" onclick="editProfile()">Sửa thông tin cá
+                                            nhân</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item text-danger" href="../index.html">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2" style="margin-bottom: 0;">
+                    <input type="date" class="form-control form-control-sm"
+                        style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px; flex: 1;" />
+                    <select class="form-select form-select-sm"
+                        style="height: 32px; width: 85px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px;">
+                        <option value="sang">Sáng</option>
+                        <option value="chieu">Chiều</option>
+                        <option value="toi">Tối</option>
+                    </select>
+                </div>
+            </div>
+            <!-- basic infor patient -->
+            <div>
+                <h6 style="font-size: 16px; font-weight: 600; color: #262626; border-bottom: 2px solid #1890ff;">
+                    Danh sách bệnh nhân</h6>
+                <input type="text" class="form-control" placeholder="Tìm theo số hồ sơ/tên bệnh nhân"
+                    style="height: 38px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px;" />
+                <div class="d-flex gap-2">
+                    <select class="form-select"
+                        style="height: 38px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px; flex: 1;">
+                        <option value="tatca">Tất cả</option>
+                        <option value="chodieutri">Chờ khám</option>
+                        <option value="datieutri">Đã khám</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm"
+                        style="height: 38px; border-radius: 6px; background-color: #1890ff; border: none; font-size: 14px; font-weight: 500;">Lọc</button>
+                </div>
+                <div>
+                    <ul class="list-group" id="danhSachBenhNhan"
+                        style="max-height: 65vh; overflow-y: auto; border: none;">
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-around">
+                <span><span class="fw-bold">Tổng:</span> 48</span>
+                <span><span class="fw-bold" style="color: #52c41a;">ĐK:</span>10</span>
+                <span><span class="fw-bold" style="color: #faad14;">CK:</span>38</span>
+            </div>
+            <div class="d-flex flex-row gap-1">
+                <button class="btn btn-sm w-50"
+                    style="height: 7vh; border-radius: 6px; background-color: #1890ff; color: white; border: none; font-size: 14px; font-weight: 500; transition: all 0.3s;"
+                    onmouseover="this.style.backgroundColor='#096dd9'"
+                    onmouseout="this.style.backgroundColor='#1890ff'">
+                    Bắt đầu khám
+                </button>
+                <button class="btn btn-sm w-50"
+                    style="height: 7vh; border-radius: 6px; background-color: #ff7875; color: white; border: none; font-size: 14px; font-weight: 500; transition: all 0.3s;"
+                    onmouseover="this.style.backgroundColor='#ff4d4f'"
+                    onmouseout="this.style.backgroundColor='#ff7875'">
+                    Chuyển viện
+                </button>
+            </div>
+            <!-- version -->
+            <div class="text-center">
+                <p style="margin: 0; font-size: 12px; color: #8c8c8c;">Version 1.0.0</p>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="col-10" style="background-color: #e6f4ff; padding: 10px; height: 95vh;">
+            <div>
+                <!-- infor patient -->
+                <div>
+                    <h4 style="font-size: 18px; font-weight: 600; color: #262626;">Thông tin bệnh
+                        nhân</h4>
+                    <div id="patientInfoContainer" class="row align-content-center" style="margin: 0;">
+                        <!-- input -->
+                        <div class="d-flex gap-2 flex-wrap" style="padding: 8px;">
+                            <!-- Column 1 -->
+                            <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 150px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0" style="width: 80px; font-weight: 500; font-size: 12px;">Số hồ
+                                        sơ</label>
+                                    <input type="text" id="input_soHoSo" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="HS123456" />
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0" style="width: 80px; font-weight: 500; font-size: 12px;">Đối
+                                        tượng</label>
+                                    <input type="text" id="input_doi_tuong" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="Bệnh Nhân" />
+                                </div>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 200px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0" style="width: 60px; font-weight: 500; font-size: 12px;">Họ
+                                        tên</label>
+                                    <input type="text" id="input_hoTen" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="NGUYỄN VĂN B" />
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0"
+                                        style="width: 60px; font-weight: 500; font-size: 12px;">Email</label>
+                                    <input type="email" id="input_email" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="joins@example.com" />
+                                </div>
+                            </div>
+
+                            <!-- Column 3 -->
+                            <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 180px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0"
+                                        style="width: 85px; font-weight: 500; font-size: 12px;">CCCD</label>
+                                    <input type="text" id="input_cccd" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="123456789" />
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0" style="width: 85px; font-weight: 500; font-size: 12px;">
+                                        BHYT</label>
+                                    <input type="text" id="input_soTheBHYT" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="876543210" />
+                                </div>
+                            </div>
+
+                            <!-- Column 4 -->
+                            <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 180px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0"
+                                        style="width: 90px; font-weight: 500; font-size: 12px;">SĐT</label>
+                                    <input type="tel" id="input_diDong" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="0123456789" />
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0"
+                                        style="width: 90px; font-weight: 500; font-size: 12px;">NN</label>
+                                    <input type="text" id="input_ngheNhiep" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="Công nhân" />
+                                </div>
+                            </div>
+
+                            <!-- Column 5 -->
+                            <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 150px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0"
+                                        style="width: 70px; font-weight: 500; font-size: 12px;">Tuổi</label>
+                                    <input type="number" id="input_tuoi" class="form-control form-control-sm"
+                                        style="max-width: 80px; font-size: 12px;" value="45" />
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0" style="width: 70px; font-weight: 500; font-size: 12px;">Giới
+                                        tính</label>
+                                    <select id="input_gioiTinh" class="form-select form-select-sm"
+                                        style="max-width: 100px; font-size: 12px;">
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Column 6 -->
+                            <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 150px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="mb-0"
+                                        style="width: 70px; font-weight: 500; font-size: 12px;">DOB</label>
+                                    <input type="date" id="input_ngaySinh" class="form-control form-control-sm"
+                                        style="font-size: 12px;" value="1979-01-01" />
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button onclick="savePatientInfo()" id="btnSave" class="btn btn-success btn-sm"
+                                        style="width: 100%; height: 32px; border-radius: 6px; font-size: 12px; font-weight: 500;">
+                                        Lưu
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- comtent -->
+                <div>
+                    <!-- navbar -->
+                    <nav class="">
+                        <ul class="d-flex flex-row justify-content-start gap-4 nav nav-tabs">
+                            <li class="">
+                                <a class="nav-link" href="../benhan/">Bệnh án</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-link" href="../toa/">Toa</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-link" href="../xembenhan/">Xem bệnh án</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-link active" href="../canlamsang/">Cận lâm sàng</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-link" href="../ketquacanlamsang/">Nhập kết quả CLS</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-link" href="../tomtatbenhan/">Tóm tắt bệnh án</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div style="margin-top: 16px;">
+                        <h5 style="font-size: 16px; font-weight: 600; color: #262626;">Cận lâm sàng đang được xây
+                            dựng...
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="../data.js"></script>
+    <script>
+
+        // Hiển thị danh sách bệnh nhân
+        function hienThiBenhNhan() {
+            const danhSach = document.getElementById('danhSachBenhNhan');
+            danhSach.innerHTML = '';
+
+            danhSachBenhNhan.forEach(bn => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.style.cssText = 'border: 1px solid #f0f0f0; border-radius: 8px; margin-bottom: 2px; padding: 5px 16px; cursor: pointer; transition: all 0.3s; background-color: #ffffff;';
+                li.onmouseover = function () { this.style.backgroundColor = '#fafafa'; this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'; };
+                li.onmouseout = function () { this.style.backgroundColor = '#ffffff'; this.style.boxShadow = 'none'; };
+                li.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center;;">
+                        <div>
+                            <strong style="color: #262626; font-size: 14px;">#${bn.id}</strong>
+                            <strong style="color: ${bn.trangThai === 'CK' ? '#faad14' : '#52c41a'}; font-size: 14px;">${bn.hoTen.toUpperCase()}</strong>
+                        </div>
+                    </div>
+                    <div style="font-size: 12px; color: #8c8c8c;">
+                        <span style="margin-right: 12px;">${bn.tuoi} tuổi</span>
+                        <span style="color: #8c8c8c; font-size: 12px; margin-left: 8px;">${bn.soHoSo}</span>
+                        <span style="margin-left: 50px;">${bn.diDong}</span>
+                    </div>
+                `;
+                danhSach.appendChild(li);
+            });
+        }
+
+        // Hiển thị khi trang load
+        hienThiBenhNhan();
+    </script>
+</body>
+
+</html>
