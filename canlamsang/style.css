@@ -1,0 +1,78 @@
+/* style.css - Clean Dashboard */
+:root {
+    --input-height: 28px;
+    --font-size-sm: 13px; /* Tăng nhẹ cỡ chữ cho dễ đọc */
+    --primary-color: #0d6efd;
+    --header-bg: #f2f2f2;
+}
+
+/* Tùy chỉnh thanh cuộn: Luôn hiển thị để người dùng biết có thể cuộn */
+.scroll-outlook {
+    overflow-y: auto;
+}
+.scroll-outlook::-webkit-scrollbar {
+    width: 10px; /* To hơn một chút để dễ kéo */
+    height: 10px;
+}
+.scroll-outlook::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 5px;
+    border: 2px solid #f1f1f1; /* Tạo viền cho thanh cuộn */
+}
+.scroll-outlook::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+.scroll-outlook::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Form Elements */
+.form-outlook .form-control, 
+.form-outlook .form-select, 
+.form-outlook .btn {
+    height: var(--input-height) !important;
+    min-height: var(--input-height) !important;
+    padding: 1px 8px !important;
+    font-size: var(--font-size-sm) !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+}
+.form-outlook label {
+    font-size: 11.5px !important;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+/* List Group */
+.list-group-item-action {
+    font-size: 13px;
+    padding: 6px 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+.list-group-item-action:hover { background-color: #e6f7ff; color: var(--primary-color); }
+
+/* Table Styles */
+.table-sticky thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--header-bg);
+    z-index: 2;
+    border-bottom: 2px solid #ccc;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    padding: 6px;
+    box-shadow: 0 1px 0 #ddd; /* Bóng nhẹ dưới header khi cuộn */
+}
+.table-sticky tbody td {
+    vertical-align: middle;
+    padding: 5px;
+    border-color: #e0e0e0;
+}
+.td-check { text-align: center; width: 40px; }

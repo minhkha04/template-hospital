@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Cận lâm sàng</title>
 </head>
 
 <body
     style="background-color: #e6f4ff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
     <div class="row" style="margin: 0; height: 100vh;">
-        <!-- slider -->
         <div class="col-2"
             style="background-color: #ffffff; padding-top: 10px; box-shadow: 2px 0 8px rgba(0,0,0,0.08); border-right: 1px solid #f0f0f0;">
-            <!-- infor hopital -->
             <div style="padding: 5px; background-color: #e6f7ff; border-radius: 8px; border: 1px solid #91d5ff;">
                 <div class="d-flex">
                     <div class="w-100">
@@ -63,7 +62,6 @@
                     </select>
                 </div>
             </div>
-            <!-- basic infor patient -->
             <div>
                 <h6 style="font-size: 16px; font-weight: 600; color: #262626; border-bottom: 2px solid #1890ff;">
                     Danh sách bệnh nhân</h6>
@@ -104,22 +102,17 @@
                     CHUYỂN VIỆN
                 </button>
             </div>
-            <!-- version -->
             <div class="text-center">
                 <p style="margin: 0; font-size: 12px; color: #8c8c8c;">Version 1.0.0</p>
             </div>
         </div>
-        <!-- content -->
         <div class="col-10" style="background-color: #e6f4ff; padding: 10px; height: 95vh;">
             <div>
-                <!-- infor patient -->
                 <div>
                     <h4 style="font-size: 18px; font-weight: 600; color: #262626;">Thông tin bệnh
                         nhân</h4>
                     <div id="patientInfoContainer" class="row align-content-center" style="margin: 0;">
-                        <!-- input -->
                         <div class="d-flex gap-2 flex-wrap" style="padding: 8px;">
-                            <!-- Column 1 -->
                             <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 150px;">
                                 <div class="d-flex align-items-center gap-2">
                                     <label class="mb-0" style="width: 80px; font-weight: 500; font-size: 12px;">Số hồ
@@ -135,7 +128,6 @@
                                 </div>
                             </div>
 
-                            <!-- Column 2 -->
                             <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 200px;">
                                 <div class="d-flex align-items-center gap-2">
                                     <label class="mb-0" style="width: 60px; font-weight: 500; font-size: 12px;">Họ
@@ -151,7 +143,6 @@
                                 </div>
                             </div>
 
-                            <!-- Column 3 -->
                             <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 180px;">
                                 <div class="d-flex align-items-center gap-2">
                                     <label class="mb-0"
@@ -167,7 +158,6 @@
                                 </div>
                             </div>
 
-                            <!-- Column 4 -->
                             <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 180px;">
                                 <div class="d-flex align-items-center gap-2">
                                     <label class="mb-0"
@@ -183,7 +173,6 @@
                                 </div>
                             </div>
 
-                            <!-- Column 5 -->
                             <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 150px;">
                                 <div class="d-flex align-items-center gap-2">
                                     <label class="mb-0"
@@ -202,7 +191,6 @@
                                 </div>
                             </div>
 
-                            <!-- Column 6 -->
                             <div class="d-flex flex-column gap-2" style="flex: 1; min-width: 150px;">
                                 <div class="d-flex align-items-center gap-2">
                                     <label class="mb-0"
@@ -221,9 +209,7 @@
                     </div>
                 </div>
 
-                <!-- comtent -->
                 <div>
-                    <!-- navbar -->
                     <nav class="">
                         <ul class="d-flex flex-row justify-content-start gap-4 nav nav-tabs">
                             <li class="">
@@ -248,14 +234,294 @@
                     </nav>
 
                     <div style="margin-top: 16px;">
-                        <h5 style="font-size: 16px; font-weight: 600; color: #262626;">Cận lâm sàng đang được xây
-                            dựng...
-                        </h5>
-                    </div>
+                        <div class="form-outlook d-flex flex-row mt-2 bg-white border shadow-sm" style="height: calc(100vh - 160px); border-radius: 4px; overflow: hidden;">
+                            
+                            <div class="d-flex flex-column border-end" style="width: 250px; background-color: #fbfbfb;">
+                                <div class="p-2 border-bottom bg-white d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold text-primary" style="font-size: 13px;">CHỈ ĐỊNH MẪU [F1]</span>
+                                    <button class="btn btn-outline-primary btn-sm px-2 fw-bold" title="Thêm mẫu mới">+</button>
+                                </div>
+                                <div class="flex-grow-1 overflow-auto scroll-outlook p-0">
+                                    <div class="list-group list-group-flush">
+                                        <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>C thường</span>
+                                        </label>
+                                        <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>C13 (Test hơi thở HP)</span>
+                                        </label>
+                                        <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>Cholesterol, triglicerit</span>
+                                        </label>
+                                        <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>Chức Năng Gan M</span>
+                                        </label>
+                                        <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>CIM - H.Pylori</span>
+                                        </label>
+                                        <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>CÔNG THỨC MÁU</span>
+                                        </label>
+                                         <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center">
+                                            <input class="form-check-input mt-0" type="checkbox"> <span>CREATININ</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="p-1 border-top text-center bg-light" style="font-size: 11px; color: #888;">
+                                    [Insert]: Thêm nhanh &nbsp;|&nbsp; [Delete]: Xóa
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-column flex-grow-1" style="min-width: 0;">
+                                
+                                <div class="d-flex flex-column border-bottom" style="height: 35%;">
+                                    <div class="p-1 bg-light border-bottom">
+                                        <div class="row g-1 align-items-end">
+                                            <div class="col-auto" style="width: 150px;">
+                                                <label>Phân loại</label>
+                                                <select class="form-select fw-bold">
+                                                    <option>Cận Lâm Sàng</option>
+                                                    <option>Sinh Hóa</option>
+                                                    <option>Huyết Học</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-auto" style="width: 120px;">
+                                                <label>Loại DV</label>
+                                                <select class="form-select">
+                                                    <option>- Chọn -</option>
+                                                    <option>Xét nghiệm</option>
+                                                    <option>Chẩn đoán hình ảnh</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <label>Tìm kiếm dịch vụ (Tên/Mã)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Nhập tên dịch vụ để tìm...">
+                                                    <button class="btn btn-secondary px-3">Tìm</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-auto scroll-outlook bg-white">
+                                        <table class="table table-sm table-bordered table-hover mb-0 text-nowrap table-sticky" style="font-size: 12.5px;">
+                                            <thead>
+                                                <tr>
+                                                    <th class="td-check"><input type="checkbox" class="form-check-input"></th>
+                                                    <th class="text-start">Tên Dịch Vụ</th>
+                                                    <th style="width: 80px;">Loại</th>
+                                                    <th>Thông báo</th>
+                                                    <th class="text-center" style="width: 60px;">Ko BH</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td class="fw-medium text-primary">Định lượng Glucose</td>
+                                                    <td class="text-center">XN</td>
+                                                    <td></td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td>Định lượng Protein toàn phần</td>
+                                                    <td class="text-center">XN</td>
+                                                    <td></td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td>Định lượng Albumin [Máu]</td>
+                                                    <td class="text-center">XN</td>
+                                                    <td></td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td>Định lượng Acid Uric</td>
+                                                    <td class="text-center">XN</td>
+                                                    <td></td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td>Định lượng Cholesterol toàn phần</td>
+                                                    <td class="text-center">XN</td>
+                                                    <td></td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td>Định lượng Bilirubin trực tiếp</td>
+                                                    <td class="text-center">XN</td>
+                                                    <td></td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                    <td>CT Bụng (nếu có)</td>
+                                                    <td class="text-center">CDHA</td>
+                                                    <td>Chỉ định bổ sung</td>
+                                                    <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="p-1 bg-light border-bottom" style="z-index: 10;">
+                                    <div class="row g-1">
+                                        <div class="col-9">
+                                            <div class="border p-1 bg-white h-100" style="border-radius: 3px;">
+                                                <div class="row g-1 mb-1">
+                                                    <div class="col-2">
+                                                        <label class="text-primary fw-bold">Mã Phiếu</label>
+                                                        <input class="form-control" value="25042601-PG-01" readonly>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <label>Bác sĩ chỉ định</label>
+                                                        <select class="form-select">
+                                                            <option>BS Nguyễn Văn A</option>
+                                                            <option>BS Trần Thị Bích</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <label>Ngày hẹn</label>
+                                                        <input type="date" class="form-control" value="2025-10-11">
+                                                    </div>
+                                                    <div class="col-4 d-flex align-items-end gap-3 px-2">
+                                                        <div class="form-check mb-1">
+                                                            <input class="form-check-input" type="checkbox" id="dungTaiKham">
+                                                            <label class="form-check-label fw-bold text-primary" for="dungTaiKham">Dùng tái khám</label>
+                                                        </div>
+                                                        <div class="form-check mb-1">
+                                                            <input class="form-check-input" type="checkbox" id="nbYeuCau" checked>
+                                                            <label class="form-check-label" for="nbYeuCau">NB Yêu cầu</label>
+                                                        </div>
+                                                        <div class="form-check mb-1">
+                                                            <input class="form-check-input" type="checkbox" id="layKq" checked>
+                                                            <label class="form-check-label fw-bold" for="layKq">Lấy KQ tại PK</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-1 mb-1">
+                                                    <div class="col-2">
+                                                        <label>CĐ Chính (ICD)</label>
+                                                        <input class="form-control fw-bold bg-warning-subtle text-dark" value="B18.1">
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <label>Mô tả chẩn đoán</label>
+                                                        <input class="form-control" value="Viêm gan virus B mạn, không có đồng nhiễm viêm C">
+                                                    </div>
+                                                </div>
+                                                <div class="row g-1">
+                                                    <div class="col-2">
+                                                        <label>CĐ Phụ (F2)</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" placeholder="Mã">
+                                                            <button class="btn btn-outline-secondary px-2">+</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <label>Mô tả CĐ Phụ</label>
+                                                        <input class="form-control" value="POLYP TÚI MẬT (K82), GAN XƠ HÓA F1 (K74.0)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3">
+                                             <div class="row g-1 h-100">
+                                                <div class="col-6"><button class="btn btn-light border w-100">In hội chẩn</button></div>
+                                                <div class="col-6"><button class="btn btn-light border w-100">CĐ GPB</button></div>
+                                                <div class="col-6"><button class="btn btn-light border w-100">Hội chẩn</button></div>
+                                                <div class="col-6"><button class="btn btn-light border w-100">CĐ MRI-CT</button></div>
+                                                <div class="col-6"><button class="btn btn-light border w-100">XN Lao</button></div>
+                                                <div class="col-6"><button class="btn btn-outline-danger w-100">Từ chối DV</button></div>
+                                            </div>
+                                            <button class="btn btn-success w-100 py-2 fw-bold text-uppercase mt-auto" style="height: auto !important;">
+                                                <i class="bi bi-save"></i> LƯU CHỈ ĐỊNH (F9)
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-grow-1 overflow-auto scroll-outlook bg-white d-flex flex-column">
+                                    <div class="px-2 py-1 bg-light border-bottom d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark" style="font-size: 12px;">Dịch vụ đã chọn</span>
+                                        <span class="text-muted fst-italic" style="font-size: 11px;">Tick để bỏ chọn</span>
+                                    </div>
+                                    <table class="table table-sm table-bordered table-hover mb-0 text-nowrap table-sticky" style="font-size: 12.5px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="td-check"></th>
+                                                <th class="text-start" style="min-width: 200px;">Tên Dịch Vụ</th>
+                                                <th style="width: 80px;" class="text-center">Loại</th>
+                                                <th class="text-start" style="min-width: 150px;">Ghi chú</th>
+                                                <th class="text-center" style="width: 50px;">SL</th>
+                                                <th class="text-start" style="min-width: 100px;">Kết quả</th>
+                                                <th class="text-center" style="width: 60px;">Đã thu</th>
+                                                <th class="text-center" style="width: 60px;">Ko BH</th>
+                                                <th class="text-center" style="width: 70px;">Thẩm mỹ</th>
+                                                <th class="text-start">Thông báo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input" checked></td>
+                                                <td class="text-primary fw-medium">Định lượng Glucose</td>
+                                                <td class="text-center">XN</td>
+                                                <td>Lấy mẫu tại PK</td>
+                                                <td class="text-center">1</td>
+                                                <td></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input" disabled></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td>Định lượng Protein toàn phần</td>
+                                                <td class="text-center">XN</td>
+                                                <td></td>
+                                                <td class="text-center">1</td>
+                                                <td></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input" disabled></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td></td>
+                                            </tr>
+                                             <tr>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td>Định lượng Albumin [Máu]</td>
+                                                <td class="text-center">XN</td>
+                                                <td></td>
+                                                <td class="text-center">1</td>
+                                                <td></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input" disabled></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td>Định lượng Cholesterol toàn phần</td>
+                                                <td class="text-center">XN</td>
+                                                <td></td>
+                                                <td class="text-center">1</td>
+                                                <td></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input" disabled></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td class="td-check"><input type="checkbox" class="form-check-input"></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <script src="../data.js"></script>
@@ -273,18 +539,18 @@
                 li.onmouseover = function () { this.style.backgroundColor = '#fafafa'; this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'; };
                 li.onmouseout = function () { this.style.backgroundColor = '#ffffff'; this.style.boxShadow = 'none'; };
                 li.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: center;;">
-                        <div>
-                            <strong style="color: #262626; font-size: 14px;">#${bn.id}</strong>
-                            <strong style="color: ${bn.trangThai === 'CK' ? '#faad14' : '#52c41a'}; font-size: 14px;">${bn.hoTen.toUpperCase()}</strong>
-                        </div>
-                    </div>
-                    <div style="font-size: 12px; color: #8c8c8c;">
-                        <span style="margin-right: 12px;">${bn.tuoi} tuổi</span>
-                        <span style="color: #8c8c8c; font-size: 12px; margin-left: 8px;">${bn.soHoSo}</span>
-                        <span style="margin-left: 50px;">${bn.diDong}</span>
-                    </div>
-                `;
+            <div style="display: flex; justify-content: space-between; align-items: center;;">
+                <div>
+                    <strong style="color: #262626; font-size: 14px;">#${bn.id}</strong>
+                    <strong style="color: ${bn.trangThai === 'CK' ? '#faad14' : '#52c41a'}; font-size: 14px;">${bn.hoTen.toUpperCase()}</strong>
+                </div>
+            </div>
+            <div style="font-size: 12px; color: #8c8c8c;">
+                <span style="margin-right: 12px;">${bn.tuoi} tuổi</span>
+                <span style="color: #8c8c8c; font-size: 12px; margin-left: 8px;">${bn.soHoSo}</span>
+                <span style="margin-left: 50px;">${bn.diDong}</span>
+            </div>
+        `;
                 danhSach.appendChild(li);
             });
         }
