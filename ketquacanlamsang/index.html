@@ -248,9 +248,91 @@
                     </nav>
 
                     <div style="margin-top: 16px;">
-                        <h5 style="font-size: 16px; font-weight: 600; color: #262626;">Nhập kết quả CLS đang được xây
-                            dựng...
-                        </h5>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <div style="background:#fff;border:1px solid #f0f0f0;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);padding:12px;">
+                                    <h6 style="font-size:14px;font-weight:600;">Tìm kiếm kết quả CLS</h6>
+                                    <div class="mb-2">
+                                        <label class="form-label small mb-1">Số hồ sơ</label>
+                                        <input type="text" class="form-control form-control-sm" value="N21-0040927" />
+                                    </div>
+                                    <div class="d-flex gap-2 mb-2">
+                                        <div class="flex-fill">
+                                            <label class="form-label small mb-1">Từ ngày</label>
+                                            <input type="date" class="form-control form-control-sm" value="2023-11-05" />
+                                        </div>
+                                        <div class="flex-fill">
+                                            <label class="form-label small mb-1">Đến ngày</label>
+                                            <input type="date" class="form-control form-control-sm" value="2025-11-05" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label small mb-1">Phòng khám</label>
+                                        <select class="form-select form-select-sm">
+                                            <option>Phòng khám Đa khoa</option>
+                                            <option>Phòng khám Gan ABC</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm w-100 mb-2">Tìm kiếm</button>
+                                    <button class="btn btn-success btn-sm w-100">In kết quả</button>
+                                </div>
+                            </div>
+
+                            <div class="col-9">
+                                <div style="background:#fff;border:1px solid #f0f0f0;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);padding:12px;">
+                                    <div class="d-flex justify-content-between align-items-start mb-2" style="font-size:13px;">
+                                        <div>
+                                            <div style="font-weight:700;color:#d80000;text-transform:uppercase;">Kết quả xét nghiệm</div>
+                                            <div>PID: BN-001</div>
+                                            <div>Họ tên: Nguyễn Văn B</div>
+                                            <div>Địa chỉ: 123 ABC, Q1</div>
+                                            <div>Bác sĩ chỉ định: BS Nguyễn Văn A</div>
+                                        </div>
+                                        <div class="text-end">
+                                            <div>Hồ sơ: HS001</div>
+                                            <div>Ngày sinh: 1979-01-01</div>
+                                            <div>Giới tính: Nam</div>
+                                            <div>Chẩn đoán: Theo dõi viêm gan</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2" style="font-size:13px;">
+                                        <div>Thời gian nhận mẫu: 22/12/2025 07:06</div>
+                                        <div>Thời gian trả kết quả: 22/12/2025 09:07</div>
+                                    </div>
+
+                                    <div style="max-height:70vh;overflow:auto;border:1px solid #d9d9d9;border-radius:8px;padding:10px;">
+                                        <table class="table table-sm table-bordered align-middle" style="font-size:12px;">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th style="width:35%;">Tên xét nghiệm</th>
+                                                    <th style="width:20%;">Kết quả</th>
+                                                    <th style="width:30%;">Trị số đối chiếu</th>
+                                                    <th style="width:15%;">Đơn vị</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="table-secondary"><td colspan="4"><strong>I. HUYẾT HỌC</strong></td></tr>
+                                                <tr><td>RBC (Dòng hồng cầu)</td><td>4.62</td><td>4.0 - 5.5</td><td>10^6/uL</td></tr>
+                                                <tr><td>HGB</td><td>15.5</td><td>Nam: 13 - 17</td><td>g/dL</td></tr>
+                                                <tr><td>HCT</td><td>42.1</td><td>34 - 50</td><td>%</td></tr>
+                                                <tr><td>MCV</td><td>91.1</td><td>86 - 110</td><td>fL</td></tr>
+                                                <tr><td>MCH</td><td>33.5</td><td>26 - 38</td><td>pg</td></tr>
+                                                <tr><td>PLT</td><td>310</td><td>150 - 450</td><td>10^3/uL</td></tr>
+                                                <tr class="table-secondary"><td colspan="4"><strong>II. SINH HÓA</strong></td></tr>
+                                                <tr><td>ALT (GPT)</td><td>45</td><td>0 - 41</td><td>U/L</td></tr>
+                                                <tr><td>AST (GOT)</td><td>38</td><td>0 - 38</td><td>U/L</td></tr>
+                                                <tr><td>Bilirubin TP</td><td>12.0</td><td>5.1 - 19.0</td><td>umol/L</td></tr>
+                                                <tr><td>Creatinine</td><td>0.9</td><td>0.7 - 1.2</td><td>mg/dL</td></tr>
+                                                <tr class="table-secondary"><td colspan="4"><strong>III. MIỄN DỊCH</strong></td></tr>
+                                                <tr><td>HBsAg</td><td>Dương tính</td><td>Âm tính</td><td></td></tr>
+                                                <tr><td>Anti HCV</td><td>Âm tính</td><td>Âm tính</td><td></td></tr>
+                                            </tbody>
+                                        </table>
+                                        <div style="font-size:12px;"><strong>Ghi chú:</strong> Dữ liệu mô phỏng theo mẫu PDF (có thể kết nối dữ liệu thực từ data.js sau).</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
