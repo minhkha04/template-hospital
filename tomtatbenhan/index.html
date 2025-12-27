@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Tóm tắt bệnh án</title>
 </head>
 
@@ -95,13 +96,13 @@
                     style="height: 7vh; border-radius: 6px; background-color: #1890ff; color: white; border: none; font-size: 14px; font-weight: 500; transition: all 0.3s;"
                     onmouseover="this.style.backgroundColor='#096dd9'"
                     onmouseout="this.style.backgroundColor='#1890ff'">
-                    Bắt đầu khám
+                    BẮT ĐẦU KHÁM
                 </button>
                 <button class="btn btn-sm w-50"
                     style="height: 7vh; border-radius: 6px; background-color: #ff7875; color: white; border: none; font-size: 14px; font-weight: 500; transition: all 0.3s;"
                     onmouseover="this.style.backgroundColor='#ff4d4f'"
                     onmouseout="this.style.backgroundColor='#ff7875'">
-                    Chuyển viện
+                    CHUYỂN VIỆN
                 </button>
             </div>
             <!-- version -->
@@ -248,31 +249,34 @@
 
                     <div style="margin-top: 16px;">
                         <div class="d-flex gap-1">
-                            <div class="w-50" style="overflow: auto; height: 65vh;">
+                            <div class="w-50" style="height: 65vh;">
                                 <div class="d-flex flex-column">
                                     <label class="form-label">Tiên căn</label>
-                                    <textarea class="form-control" placeholder="Nhập tiên căn..."></textarea>
+                                    <textarea class="form-control textarea-fixed" style="height: 16vh"></textarea>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <label class="form-label">Chuẩn đoán</label>
-                                    <textarea class="form-control" placeholder="Nhập chuẩn đoán..."></textarea>
+                                    <textarea class="form-control textarea-fixed" style="height: 16vh"></textarea>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <label class="form-label">Kết quả lâm sàng</label>
-                                    <textarea class="form-control" placeholder="Nhập kết quả lâm sàng..."></textarea>
+                                    <textarea class="form-control textarea-fixed" style="height: 16vh"></textarea>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <label class="form-label">Điều trị</label>
-                                    <textarea class="form-control" placeholder="Nhập điều trị..."></textarea>
+                                    <textarea class="form-control textarea-fixed" style="height: 16vh"></textarea>
                                 </div>
                             </div>
                             <div class="w-50">
                                 <div class="d-flex flex-column">
                                     <label class="form-label">Chuyên khoa khác</label>
-                                    <textarea class="form-control" placeholder="Nhập chuyên khoa khác..."></textarea>
+                                    <textarea class="form-control textarea-fixed" style="height: 69vh"></textarea>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary mt-2"
+                                        style="height: 38px; border-radius: 6px; background-color: #1890ff; border: none; font-size: 14px; font-weight: 500;">Lưu</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
