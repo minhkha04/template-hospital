@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <title>Xem bệnh án</title>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Xem benh an</title>
 </head>
 
 <body
@@ -247,19 +248,189 @@
                     </nav>
 
                     <div style="margin-top: 16px;">
-                        <h5 style="font-size: 16px; font-weight: 600; color: #262626;">Xem bệnh án đang được xây dựng...
-                        </h5>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <div class="app-card p-3 h-100">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold mb-1" style="font-size: 13px;">Chọn phòng
+                                            khám</label>
+                                        <select class="form-select form-select-sm" id="selectPhongKham">
+                                            <option>Phòng khám Gan ABC</option>
+                                            <option>Phòng khám Nội tổng hợp</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="d-flex gap-2 mb-2">
+                                        <div class="flex-fill">
+                                            <label class="form-label small mb-1">Từ ngày</label>
+                                            <input type="date" class="form-control form-control-sm" id="fromDate" />
+                                        </div>
+                                        <div class="flex-fill">
+                                            <label class="form-label small mb-1">Đến ngày</label>
+                                            <input type="date" class="form-control form-control-sm" id="toDate" />
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-center gap-2 mb-3 filter-row">
+                                        <input type="text" class="form-control form-control-sm" id="keyword"
+                                            placeholder="Tìm theo mã hồ sơ/tên" />
+                                        <button class="btn btn-primary btn-sm btn-search"
+                                            onclick="locBenhAn()">Tìm</button>
+                                        <button class="btn btn-success btn-sm btn-print"
+                                            onclick="inBenhAn()">In</button>
+                                    </div>
+
+                                    <div class="report-list">
+                                        <ul class="list-unstyled mb-0" id="benhAnList"></ul>
+                                    </div>
+                                    <button class="btn btn-outline-secondary btn-sm w-100 mt-2"
+                                        onclick="lamMoiBenhAn()">
+                                        Hiển thị tất cả bệnh án
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-9">
+                                <div class="app-card p-3 h-100">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <div>
+                                            <h6 class="mb-1" style="font-size: 16px; font-weight: 600; color: #262626;">
+                                                Chi tiết bệnh án
+                                            </h6>
+                                            <div class="text-muted small" id="reportMeta">Chọn 1 bệnh án để xem chi tiết
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="report-view" id="reportContent">
+                                        <p class="text-muted mb-0">Chưa có bệnh án được chọn.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
+    </div>
 
     <script src="../data.js"></script>
     <script>
+        function dinhDangNgay(isoDate) {
+            if (!isoDate) return '';
+            const [y, m, d] = isoDate.split('-');
+            return `${d}/${m}/${y}`;
+        }
 
-        // Hiển thị danh sách bệnh nhân
+        function dinhDangDateInput(dateObj) {
+            const y = dateObj.getFullYear();
+            const m = String(dateObj.getMonth() + 1).padStart(2, '0');
+            const d = String(dateObj.getDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
+        }
+
+        function renderBenhAnList(listNguon = danhSachBenhAnChiTiet) {
+            const danhSach = document.getElementById('benhAnList');
+            danhSach.innerHTML = '';
+
+            listNguon.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'report-item';
+                li.dataset.id = item.id;
+                li.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="fw-semibold" style="font-size: 13px;">${item.tieuDe}</div>
+                    <div class="text-muted" style="font-size: 12px;">${item.maHoSo} | ${dinhDangNgay(item.ngay)}</div>
+                </div>
+                <span class="badge text-bg-light" style="font-size: 11px;">${item.phong}</span>
+            </div>
+        `;
+                li.addEventListener('click', () => chonBenhAn(item.id));
+                danhSach.appendChild(li);
+            });
+        }
+
+        function chonBenhAn(id) {
+            const benhAn = danhSachBenhAnChiTiet.find(item => item.id === id);
+            const reportMeta = document.getElementById('reportMeta');
+            const reportContent = document.getElementById('reportContent');
+            const danhSach = document.querySelectorAll('#benhAnList .report-item');
+
+            // Xử lý active class cho item được chọn
+            danhSach.forEach(li => li.classList.remove('active'));
+            const activeItem = Array.from(danhSach).find(li => li.dataset.id === id);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+
+            if (!benhAn) {
+                reportMeta.textContent = 'Không có bệnh án trong bộ lọc hiện tại';
+                reportContent.innerHTML = '<p class="text-muted mb-0">Chưa có bệnh án được chọn.</p>';
+                return;
+            }
+
+            reportMeta.textContent = `${benhAn.maHoSo} | ${dinhDangNgay(benhAn.ngay)} | ${benhAn.tieuDe}`;
+            reportContent.innerHTML = benhAn.noiDung;
+        }
+
+        function datNgayLocMacDinh() {
+            const fromInput = document.getElementById('fromDate');
+            const toInput = document.getElementById('toDate');
+
+            if (!Array.isArray(danhSachBenhAnChiTiet) || danhSachBenhAnChiTiet.length === 0) {
+                fromInput.value = '';
+                toInput.value = '';
+                return;
+            }
+
+            const dates = danhSachBenhAnChiTiet.map(item => new Date(item.ngay));
+            const minDate = new Date(Math.min.apply(null, dates));
+            const maxDate = new Date(Math.max.apply(null, dates));
+
+            fromInput.value = dinhDangDateInput(minDate);
+            toInput.value = dinhDangDateInput(maxDate);
+        }
+
+        function locBenhAn() {
+            const keyword = document.getElementById('keyword').value.trim().toLowerCase();
+            const from = document.getElementById('fromDate').value;
+            const to = document.getElementById('toDate').value;
+
+            const ketQua = danhSachBenhAnChiTiet.filter(item => {
+                const textMatch = item.tieuDe.toLowerCase().includes(keyword) || item.maHoSo.toLowerCase().includes(keyword);
+
+                const ngayItem = new Date(item.ngay);
+                // Lưu ý: So sánh ngày cần cẩn thận múi giờ, ở đây so sánh đơn giản theo ngày 00:00:00
+                const hopFrom = from ? ngayItem >= new Date(from) : true;
+                const hopTo = to ? ngayItem <= new Date(to) : true;
+
+                return textMatch && hopFrom && hopTo;
+            });
+
+            renderBenhAnList(ketQua);
+
+            // Tự động chọn kết quả đầu tiên nếu có, ngược lại reset vùng hiển thị
+            if (ketQua.length > 0) {
+                chonBenhAn(ketQua[0].id);
+            } else {
+                chonBenhAn('');
+            }
+        }
+
+        function lamMoiBenhAn() {
+            document.getElementById('keyword').value = '';
+            datNgayLocMacDinh();
+            renderBenhAnList();
+
+            if (danhSachBenhAnChiTiet.length > 0) {
+                chonBenhAn(danhSachBenhAnChiTiet[0].id);
+            } else {
+                chonBenhAn('');
+            }
+        }
+
         function hienThiBenhNhan() {
             const danhSach = document.getElementById('danhSachBenhNhan');
             danhSach.innerHTML = '';
@@ -287,7 +458,6 @@
             });
         }
 
-        // Hiển thị khi trang load
         hienThiBenhNhan();
     </script>
 </body>

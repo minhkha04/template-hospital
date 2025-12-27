@@ -1,0 +1,82 @@
+body {
+    background-color: #e6f4ff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.app-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.report-list {
+    max-height: 72vh;
+    overflow-y: auto;
+}
+
+.report-item {
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.report-item:hover {
+    background: #fafafa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.report-item.active {
+    border-color: #1890ff;
+    background: #e6f7ff;
+}
+
+.report-view {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 16px;
+    height: 78vh;
+    overflow: auto;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.filter-row .form-control {
+    flex: 1;
+}
+
+.btn-search {
+    min-width: 64px;
+}
+
+.btn-print {
+    min-width: 60px;
+}
+
+.patient-extra-col {
+    flex: 1;
+    min-width: 150px;
+}
+
+.patient-label {
+    width: 70px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.patient-input {
+    font-size: 12px;
+}
+
+.patient-save {
+    width: 100%;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}

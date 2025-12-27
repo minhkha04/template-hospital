@@ -340,3 +340,131 @@ const danhSachBenhNhan = [
     doiTuong: "Bệnh Nhân",
   },
 ];
+// Danh sách bệnh án chi tiết (demo cho trang Xem bệnh án)
+const danhSachBenhAnChiTiet = [
+  {
+    id: "ba-01",
+    maHoSo: "HS001",
+    tieuDe: "26/04/2025 Viêm gan virus",
+    ngay: "2025-04-26",
+    phong: "Phòng khám Gan ABC",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Bệnh viện Đại học Y Dược TP.HCM</div>
+        <div style="font-size: 16px; font-weight: 700;">BỆNH ÁN NGOẠI TRÚ</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS001</div>
+      </div>
+      <div class="mb-2"><strong>Họ tên:</strong> Nguyễn Thị A &nbsp;&nbsp; <strong>Giới tính:</strong> Nữ &nbsp;&nbsp; <strong>Năm sinh:</strong> 1986</div>
+      <div class="mb-2"><strong>Đối tượng:</strong> BHYT &nbsp;&nbsp; <strong>Số thẻ:</strong> 123-456-789</div>
+      <div class="mb-2"><strong>Ngày khám:</strong> 26/04/2025 &nbsp;&nbsp; <strong>Phòng khám:</strong> Gan</div>
+      <hr>
+      <div class="mb-2"><strong>I. Lý do khám bệnh:</strong> Đau bụng, mệt mỏi kéo dài.</div>
+      <div class="mb-2"><strong>II. Tổng trạng:</strong> Mạch 72l/p, huyết áp 110/70 mmHg, cân nặng 51kg, chiều cao 157cm, BMI 20.7.</div>
+      <div class="mb-2"><strong>III. Bệnh sử:</strong> Vàng da 2 tuần, ăn kém, không sốt.</div>
+      <div class="mb-2"><strong>IV. Khám lâm sàng:</strong> Bụng mềm, không phù, gan không to, lưỡi sạch.</div>
+      <div class="mb-2"><strong>V. Chẩn đoán:</strong> Theo dõi viêm gan virus B mạn tính.</div>
+      <div class="mb-2"><strong>VI. Cận lâm sàng:</strong> AST/ALT tăng, HBV-DNA 3.2E7 copies/ml.</div>
+      <div class="mb-2"><strong>VII. Điều trị:</strong> Uống tenofovir 300mg ngày 1 viên, hẹn tái khám sau 4 tuần.</div>
+      <hr>
+      <div class="text-end" style="font-size: 13px;">Người lập: Bác sĩ Nguyễn Văn A</div>
+    `,
+  },
+  {
+    id: "ba-02",
+    maHoSo: "HS002",
+    tieuDe: "14/05/2025 Kiểm tra định kỳ",
+    ngay: "2025-05-14",
+    phong: "Phòng khám Nội tổng hợp",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Phòng khám Gan ABC</div>
+        <div style="font-size: 16px; font-weight: 700;">BÁO CÁO KẾT QUẢ TÁI KHÁM</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS002</div>
+      </div>
+      <div class="mb-2"><strong>Họ tên:</strong> Trần Thị B</div>
+      <div class="mb-2"><strong>Ngày khám:</strong> 14/05/2025</div>
+      <div class="mb-2"><strong>Kết luận:</strong> Sức khỏe ổn định, men gan giảm.</div>
+      <div class="mb-2"><strong>Kế hoạch:</strong> Tiếp tục thuốc, hẹn lại sau 3 tháng.</div>
+    `,
+  },
+  {
+    id: "ba-03",
+    maHoSo: "HS003",
+    tieuDe: "02/06/2025 Tư vấn điều trị",
+    ngay: "2025-06-02",
+    phong: "Phòng khám Gan ABC",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Phòng khám Gan ABC</div>
+        <div style="font-size: 16px; font-weight: 700;">TƯ VẤN ĐIỀU TRỊ</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS003</div>
+      </div>
+      <div class="mb-2"><strong>Tóm tắt:</strong> Bệnh nhân được tư vấn chiến lược điều trị duy trì.</div>
+      <div class="mb-2"><strong>Hướng dẫn:</strong> Chế độ ăn nhạt muối, hạn chế rượu bia.</div>
+      <div class="mb-2"><strong>Ghi chú:</strong> Cần làm xét nghiệm HBV DNA sau 2 tháng.</div>
+    `,
+  },
+  {
+    id: "ba-04",
+    maHoSo: "HS004",
+    tieuDe: "15/06/2025 Tái khám men gan",
+    ngay: "2025-06-15",
+    phong: "Phòng khám Gan ABC",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Phòng khám Gan ABC</div>
+        <div style="font-size: 16px; font-weight: 700;">TÁI KHÁM MEN GAN</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS004</div>
+      </div>
+      <div class="mb-2"><strong>Kết quả:</strong> AST 80, ALT 92, khuyến nghị tiếp tục theo dõi.</div>
+      <div class="mb-2"><strong>Kế hoạch:</strong> Tái khám sau 2 tuần, làm lại xét nghiệm men gan.</div>
+    `,
+  },
+  {
+    id: "ba-05",
+    maHoSo: "HS005",
+    tieuDe: "28/06/2025 Kiểm tra định kỳ",
+    ngay: "2025-06-28",
+    phong: "Phòng khám Nội tổng hợp",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Phòng khám Nội tổng hợp</div>
+        <div style="font-size: 16px; font-weight: 700;">KIỂM TRA ĐỊNH KỲ</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS005</div>
+      </div>
+      <div class="mb-2"><strong>Tổng quan:</strong> Huyết áp ổn, đường huyết ổn định.</div>
+      <div class="mb-2"><strong>Gợi ý:</strong> Vận động nhẹ 30 phút/ngày, chế độ ăn ít muối.</div>
+    `,
+  },
+  {
+    id: "ba-06",
+    maHoSo: "HS006",
+    tieuDe: "05/07/2025 Tư vấn dinh dưỡng",
+    ngay: "2025-07-05",
+    phong: "Phòng khám Dinh dưỡng",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Phòng khám Dinh dưỡng</div>
+        <div style="font-size: 16px; font-weight: 700;">TƯ VẤN DINH DƯỠNG</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS006</div>
+      </div>
+      <div class="mb-2"><strong>Nội dung:</strong> Hướng dẫn chế độ ăn giàu protein, giảm dầu mỡ.</div>
+      <div class="mb-2"><strong>Lịch hẹn:</strong> Tái khám dinh dưỡng sau 1 tháng.</div>
+    `,
+  },
+  {
+    id: "ba-07",
+    maHoSo: "HS007",
+    tieuDe: "12/07/2025 Báo cáo xét nghiệm",
+    ngay: "2025-07-12",
+    phong: "Phòng khám Xét nghiệm",
+    noiDung: `
+      <div class="text-center mb-3">
+        <div style="font-size: 12px; text-transform: uppercase;">Phòng khám Xét nghiệm</div>
+        <div style="font-size: 16px; font-weight: 700;">BÁO CÁO KẾT QUẢ</div>
+        <div class="text-muted" style="font-size: 12px;">Mã hồ sơ: HS007</div>
+      </div>
+      <div class="mb-2"><strong>KQ:</strong> HbA1c 5.6%, Cholesterol 4.5 mmol/L.</div>
+    `,
+  },
+];
