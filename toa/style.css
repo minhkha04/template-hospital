@@ -9,7 +9,7 @@
 
 .rx-table {
   width: 100%;
-  font-size: 13px;
+  font-size: 15px;
   background-color: #ffffff;
   margin-bottom: 0;
   display: table;
@@ -18,7 +18,7 @@
 /* Header của table */
 .rx-table thead {
   display: table;
-  width: 100%;
+  width: calc(100% - 15px); /* Bù trừ cho scrollbar */
   table-layout: fixed;
 }
 
@@ -29,16 +29,83 @@
   text-align: center;
   padding: 2px 2px;
   border: 1px solid #d9d9d9;
-  height: 35px; /* Chiều cao header */
+  height: 38px; /* Chiều cao header */
   vertical-align: middle;
   white-space: nowrap;
+}
+
+/* Cột STT - Header */
+.rx-table thead th:nth-child(1) {
+  width: 55px;
+}
+
+/* Cột Tên thuốc - Header */
+.rx-table thead th:nth-child(2) {
+  width: 220px;
+  min-width: 150px;
+}
+
+/* Cột ĐVT - Header */
+.rx-table thead th:nth-child(3) {
+  width: 75px;
+}
+
+/* Cột Lần/ngày - Header */
+.rx-table thead th:nth-child(4) {
+  width: 80px;
+}
+
+/* Cột SL/lần - Header */
+.rx-table thead th:nth-child(5) {
+  width: 75px;
+}
+
+/* Cột ĐVSD - Header */
+.rx-table thead th:nth-child(6) {
+  width: 75px;
+}
+
+/* Cột Ph.thức - Header */
+.rx-table thead th:nth-child(7) {
+  width: 95px;
+}
+
+/* Cột Sử dụng - Header */
+.rx-table thead th:nth-child(8) {
+  width: 110px;
+}
+
+/* Cột T.gian SD - Header */
+.rx-table thead th:nth-child(9) {
+  width: 105px;
+}
+
+/* Cột SLg - Header */
+.rx-table thead th:nth-child(10) {
+  width: 65px;
+}
+
+/* Cột S/Ngày - Header */
+.rx-table thead th:nth-child(11) {
+  width: 75px;
+}
+
+/* Cột Không BHYT - Header */
+.rx-table thead th:nth-child(12) {
+  width: 95px;
+}
+
+/* Cột nút xóa - Header */
+.rx-table thead th:nth-child(13) {
+  width: 55px;
 }
 
 /* Tbody scrollable */
 .rx-table tbody {
   display: block;
-  max-height: 300px;
-  overflow-y: auto;
+  max-height: 350px;
+  min-height: 350px;
+  overflow-y: scroll;
   width: 100%;
 }
 
@@ -47,7 +114,7 @@
   display: table;
   width: 100%;
   table-layout: fixed;
-  height: 38px; /* Chiều cao mỗi dòng */
+  height: 46px; /* Chiều cao mỗi dòng */
   border: 1px solid #d9d9d9;
 }
 
@@ -64,79 +131,79 @@
 
 /* Cột STT */
 .rx-table tbody td:nth-child(1) {
-  width: 40px; /* Độ rộng cột STT */
+  width: 55px; /* Độ rộng cột STT */
   text-align: center;
   font-weight: 500;
 }
 
 /* Cột Tên thuốc */
 .rx-table tbody td:nth-child(2) {
-  width: 200px; /* Độ rộng cột Tên thuốc */
+  width: 220px; /* Độ rộng cột Tên thuốc */
   min-width: 150px;
 }
 
 /* Cột ĐVT */
 .rx-table tbody td:nth-child(3) {
-  width: 70px; /* Độ rộng cột ĐVT */
+  width: 75px; /* Độ rộng cột ĐVT */
 }
 
 /* Cột Lần/ngày */
 .rx-table tbody td:nth-child(4) {
-  width: 70px; /* Độ rộng cột Lần/ngày */
+  width: 80px; /* Độ rộng cột Lần/ngày */
 }
 
 /* Cột SL/lần */
 .rx-table tbody td:nth-child(5) {
-  width: 70px; /* Độ rộng cột SL/lần */
+  width: 75px; /* Độ rộng cột SL/lần */
 }
 
 /* Cột ĐVSD */
 .rx-table tbody td:nth-child(6) {
-  width: 70px; /* Độ rộng cột ĐVSD */
+  width: 75px; /* Độ rộng cột ĐVSD */
 }
 
 /* Cột Ph.thức */
 .rx-table tbody td:nth-child(7) {
-  width: 90px; /* Độ rộng cột Phương thức */
+  width: 95px; /* Độ rộng cột Phương thức */
 }
 
 /* Cột Sử dụng */
 .rx-table tbody td:nth-child(8) {
-  width: 100px; /* Độ rộng cột Sử dụng */
+  width: 110px; /* Độ rộng cột Sử dụng */
 }
 
 /* Cột T.gian SD */
 .rx-table tbody td:nth-child(9) {
-  width: 100px; /* Độ rộng cột Thời gian SD */
+  width: 105px; /* Độ rộng cột Thời gian SD */
 }
 
 /* Cột SLg */
 .rx-table tbody td:nth-child(10) {
-  width: 60px; /* Độ rộng cột Số lượng */
+  width: 65px; /* Độ rộng cột Số lượng */
 }
 
 /* Cột S/Ngày */
 .rx-table tbody td:nth-child(11) {
-  width: 60px; /* Độ rộng cột Số ngày */
+  width: 75px; /* Độ rộng cột Số ngày */
 }
 
 /* Cột Không BHYT */
 .rx-table tbody td:nth-child(12) {
-  width: 50px; /* Độ rộng cột Không BHYT */
+  width: 95px; /* Độ rộng cột Không BHYT */
   text-align: center;
 }
 
 /* Cột nút xóa */
 .rx-table tbody td:nth-child(13) {
-  width: 50px; /* Độ rộng cột nút xóa */
+  width: 55px; /* Độ rộng cột nút xóa */
   text-align: center;
 }
 
 /* Input và select trong table */
 .rx-input {
-  height: 30px; /* Chiều cao input/select */
-  padding: 2px 4px;
-  font-size: 13px;
+  height: 38px; /* Chiều cao input/select */
+  padding: 5px 8px;
+  font-size: 15px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   width: 100%;
@@ -150,10 +217,10 @@
 
 /* Button xóa */
 .rx-btn {
-  height: 28px; /* Chiều cao nút xóa */
-  width: 28px;
+  height: 34px; /* Chiều cao nút xóa */
+  width: 34px;
   padding: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1;
   border-radius: 4px;
 }
@@ -183,12 +250,12 @@
 /* Màn hình nhỏ hơn 1400px */
 @media (max-width: 1400px) {
   .rx-table {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .rx-input {
-    font-size: 12px;
-    height: 30px;
+    font-size: 13px;
+    height: 32px;
   }
 
   .rx-table tbody td:nth-child(2) {
@@ -199,12 +266,12 @@
 /* Màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
   .rx-table {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .rx-input {
-    font-size: 11px;
-    height: 28px;
+    font-size: 12px;
+    height: 32px;
   }
 
   .rx-table tbody tr {
