@@ -1,49 +1,118 @@
 body {
     background-color: #e6f4ff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    padding: 4px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.col-10[style*="height: 95vh"] {
+    height: 95vh;
+    overflow: hidden;
+    padding: 6px !important;
+}
+
+.col-10[style*="height: 95vh"] > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-10[style*="height: 95vh"] > div > div:last-child {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-10[style*="height: 95vh"] > div > div:last-child > nav + div {
+    flex: 1;
+    min-height: 0;
+}
+
+.col-10[style*="height: 95vh"] > div > div:last-child > nav + div > .row {
+    flex: 1;
+    min-height: 0;
+}
+
+.col-10[style*="height: 95vh"] > div > div:last-child > nav + div > .row > [class^="col-"] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 .app-card {
-    background: #ffffff;
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    padding: 8px 8px 6px;
 }
 
 .report-list {
-    max-height: 72vh;
-    overflow-y: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 4px;
 }
 
 .report-item {
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin-bottom: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
-    background: #fff;
+    background: transparent;
+}
+
+.report-item:last-child {
+    margin-bottom: 0;
 }
 
 .report-item:hover {
-    background: #fafafa;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background: rgba(24, 144, 255, 0.08);
+    box-shadow: none;
 }
 
 .report-item.active {
     border-color: #1890ff;
-    background: #e6f7ff;
+    background: rgba(24, 144, 255, 0.12);
 }
 
 .report-view {
     background: #ffffff;
     border: 1px solid #d9d9d9;
     border-radius: 8px;
-    padding: 16px;
-    height: 78vh;
+    padding: 10px;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
     overflow: auto;
     font-size: 14px;
     line-height: 1.45;
+}
+
+.col-10[style*="height: 95vh"] > div > div:last-child > nav + div > .row.g-3 {
+    flex: 1;
+    min-height: 0;
+}
+
+.col-10[style*="height: 95vh"] > div > div:last-child > nav + div > .row.g-3 > [class^="col-"] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 .filter-row .form-control {
@@ -56,6 +125,20 @@ body {
 
 .btn-print {
     min-width: 60px;
+}
+
+.btn-view-all {
+    background: #f2f2f2;
+    border-color: #d0d0d0;
+    color: #555;
+}
+
+.btn-view-all:hover,
+.btn-view-all:focus {
+    background: #f2f2f2;
+    border-color: #d0d0d0;
+    color: #555;
+    box-shadow: none;
 }
 
 .patient-extra-col {
