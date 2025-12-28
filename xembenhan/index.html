@@ -248,7 +248,7 @@
 
                     <div style="margin-top: 16px;">
                         <div class="d-flex gap-2">
-                            <div class="bg-warning d-flex flex-column gap-1" style="width: 20%;">
+                            <div class="d-flex flex-column gap-1" style="width: 20%;">
                                 <div class="d-flex">
                                     <div class="w-50">
                                         Từ ngày
@@ -279,8 +279,9 @@
                                         thị tất cả</button>
                                 </div>
                             </div>
-                            <div class="w-75 bg-white">
-                                asda
+                            <div style="width: 80%;">
+                                <iframe src="../benh-an.pdf" title="PDF Demo" loading="lazy"
+                                    style="width: 100%; height: 100%;"></iframe>
                             </div>
                         </div>
                     </div>
@@ -303,7 +304,6 @@
                 div.style.cssText = 'padding: 4px 6px; border-bottom: 1px solid #e8e8e8; cursor: pointer; transition: background-color 0.2s;';
                 div.onmouseover = function () { this.style.backgroundColor = '#f0f0f0'; };
                 div.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
-                div.onclick = function () { chonBenhAn(ba.id); };
 
                 div.innerHTML = `
                     <p style="margin: 0; font-weight: 500; color: #262626; font-size: 13px;">${ba.tenBenhAn}</p>
@@ -320,12 +320,6 @@
             const month = String(date.getMonth() + 1).padStart(2, '0');
             const year = date.getFullYear();
             return `${day}/${month}/${year}`;
-        }
-
-        // Chọn bệnh án
-        function chonBenhAn(id) {
-            console.log('Đã chọn bệnh án ID:', id);
-            // Thêm logic xử lý khi chọn bệnh án
         }
 
         // Hiển thị danh sách bệnh nhân
