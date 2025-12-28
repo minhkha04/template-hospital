@@ -248,9 +248,101 @@
                     </nav>
 
                     <div style="margin-top: 16px;">
-                        <h5 style="font-size: 16px; font-weight: 600; color: #262626;">Nhập kết quả CLS đang được xây
-                            dựng...
-                        </h5>
+                        <div class="d-flex gap-">
+                            <div class="d-flex flex-column gap-1" style="width: 30%;">
+                                <div class="d-flex gap-2 align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="w-25" style="font-size: 12px;">
+                                            Từ ngày
+                                        </div>
+                                        <div class="w-75">
+                                            <input type="date" class="form-control"
+                                                style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px;" />
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div style="font-size: 12px;">
+                                            Đến ngày
+                                        </div>
+                                        <div style="width: 70%;">
+                                            <input type="date" class="form-control"
+                                                style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <label for="" style="font-size: 12px;">Mã HS.CLS</label>
+                                        <input type="text" class="form-control form-control-sm"
+                                            style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px; width: 120px;" />
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <label for="" style="font-size: 12px;">Kết quả</label>
+                                        <select class="form-select form-select-sm"
+                                            style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px; width: 100px;">
+                                            <option value="tatca">Tất cả</option>
+                                            <option value="chuaCoKetQua">Chưa có</option>
+                                            <option value="daCoKetQua">Đã có</option>
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <button class="btn btn-primary btn-sm">Tìm kiếm</button>
+                                    </div>
+                                </div>
+
+                                <div id="danhSachKQCLS" class="border-1 border-dark border"
+                                    style="max-height: 70vh; min-height: 65vh; overflow-y: auto;">
+                                </div>
+                                <div class="d-flex justify-content-around">
+                                    <span><span class="fw-bold">Tổng:</span> 48</span>
+                                    <span><span class="fw-bold" style="color: #52c41a;">Có:</span>10</span>
+                                    <span><span class="fw-bold" style="color: #faad14;">Chưa:</span>38</span>
+                                </div>
+                            </div>
+                            <div style="width: 70%;" class="ps-4">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="mb-3 w-25">
+                                        <label for="fileInput" class="form-label"
+                                            style="font-weight: 600; font-size: 13px; color: #262626; margin-bottom: 12px;">Chọn
+                                            file kết quả</label>
+                                        <div id="dropZone" style="position: relative; width: 100%;">
+                                            <input type="file" class="form-control" id="fileInput"
+                                                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                                                style="position: absolute; opacity: 0; width: 100%; height: 100%; cursor: pointer; z-index: 2;">
+                                            <button type="button" class="btn btn-outline-primary" id="uploadBtn"
+                                                style="width: 100%; min-height: 30px; border-radius: 8px; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border: 1px dashed #1890ff; background: linear-gradient(135deg, #f0f7ff 0%, #e6f4ff 100%); transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);">
+                                                <div style="text-align: center;">
+                                                    <div
+                                                        style="color: #1890ff; font-weight: 600; font-size: 14px; margin-bottom: 4px;">
+                                                        Chọn file hoặc kéo thả vào đây
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 w-50">
+                                        <label class="form-label" style="font-weight: 500; font-size: 12px;">File đã
+                                            chọn</label>
+                                        <div id="fileInfo"
+                                            style="background-color: #f5f5f5; border-radius: 6px; min-height: 40px; font-size: 11px; color: #595959; max-width: 100%; overflow: hidden;">
+                                            Chưa có file nào được chọn
+                                        </div>
+                                    </div>
+                                    <div class="w-25" style="padding-top: 15px;">
+                                        <button class="btn btn-success"
+                                            style="border-radius: 6px; font-size: 12px; font-weight: 500;">
+                                            Lưu
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Preview Area -->
+                                <div id="filePreview" style="display: none">
+                                    <div id="previewContainer">
+                                        <!-- Preview content will be inserted here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,6 +351,182 @@
     </div>
 
     <script src="../data.js"></script>
+    <script>
+        // Hiển thị danh sách kết quả CLS
+        function hienThiKetQuaCLS() {
+            const container = document.getElementById('danhSachKQCLS');
+            container.innerHTML = '';
+
+            danhSachKetQuaCLS.forEach(cls => {
+                const div = document.createElement('div');
+                div.style.cssText = 'padding: 6px 8px; border-bottom: 1px solid #e8e8e8; cursor: pointer; transition: background-color 0.2s;';
+                div.onmouseover = function () { this.style.backgroundColor = '#f0f0f0'; };
+                div.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
+
+                const labelColor = cls.isKetQua ? '#52c41a' : '#faad14';
+                const labelText = cls.isKetQua ? 'Đã có KQ' : 'Chưa có KQ';
+                const labelBgColor = cls.isKetQua ? '#f6ffed' : '#fffbe6';
+
+                div.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <p style="margin: 0; font-weight: 700; color: ${labelColor}; font-size: 13px;">${cls.tenXetNghiem}</p>
+                            <p style="margin: 0; font-size: 11px; color: #8c8c8c; font-weight: 600;">${cls.maHSCLS}</p>
+                        </div>
+                        <span style="padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 500; color: ${labelColor}; background-color: ${labelBgColor}; border: 1px solid ${labelColor};">${labelText}</span>
+                    </div>
+                    <div style="display: flex; justify-content: flex-start; align-items: center;">
+                        <p style="margin: 0; font-size: 11px; color: #8c8c8c;">${formatDate(cls.ngay)}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        // Xử lý hiển thị file đã chọn
+        const fileInput = document.getElementById('fileInput');
+        const dropZone = document.getElementById('dropZone');
+        const uploadBtn = document.getElementById('uploadBtn');
+
+        // Hover effect for upload button
+        uploadBtn.addEventListener('mouseenter', function () {
+            this.style.borderColor = '#096dd9';
+            this.style.background = 'linear-gradient(135deg, #e6f4ff 0%, #d6ecff 100%)';
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 4px 12px rgba(24, 144, 255, 0.2)';
+            this.querySelector('svg').style.transform = 'scale(1.1)';
+        });
+
+        uploadBtn.addEventListener('mouseleave', function () {
+            this.style.borderColor = '#1890ff';
+            this.style.background = 'linear-gradient(135deg, #f0f7ff 0%, #e6f4ff 100%)';
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 2px 8px rgba(24, 144, 255, 0.1)';
+            this.querySelector('svg').style.transform = 'scale(1)';
+        });
+
+        // Drag and drop events
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, function () {
+                uploadBtn.style.borderColor = '#52c41a';
+                uploadBtn.style.background = 'linear-gradient(135deg, #f6ffed 0%, #d9f7be 100%)';
+                uploadBtn.style.transform = 'scale(1.02)';
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, function () {
+                uploadBtn.style.borderColor = '#1890ff';
+                uploadBtn.style.background = 'linear-gradient(135deg, #f0f7ff 0%, #e6f4ff 100%)';
+                uploadBtn.style.transform = 'scale(1)';
+            });
+        });
+
+        dropZone.addEventListener('drop', function (e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            fileInput.files = files;
+            fileInput.dispatchEvent(new Event('change'));
+        });
+
+        fileInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            const fileInfo = document.getElementById('fileInfo');
+            const filePreview = document.getElementById('filePreview');
+            const previewContainer = document.getElementById('previewContainer');
+
+            if (file) {
+                const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                fileInfo.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 12px; animation: fadeIn 0.3s ease;">
+                        <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, #e6f4ff 0%, #bae0ff 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div style="flex: 1; min-width: 0; overflow: hidden;">
+                            <p style="margin: 0; font-weight: 600; color: #262626; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${file.name}">${file.name}</p>
+                            <p style="margin: 0; font-size: 12px; color: #8c8c8c; margin-top: 2px;">${fileSize} MB</p>
+                        </div>
+                        <button onclick="deleteFile()" class="btn btn-sm btn-danger" style="height: 36px; width: 80px; border-radius: 6px; font-size: 12px; font-weight: 500; transition: all 0.3s; flex-shrink: 0;">
+                            Xóa
+                        </button>
+                    </div>
+                `;
+
+                // Display file preview
+                const fileType = file.type;
+                const fileName = file.name.toLowerCase();
+
+                if (fileType === 'application/pdf' || fileName.endsWith('.pdf')) {
+                    // Preview PDF files
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        previewContainer.innerHTML = `
+                            <embed src="${e.target.result}" type="application/pdf" 
+                                   style="width: 100%; height: 70vh; border-radius: 4px;">
+                        `;
+                        filePreview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    // For other file types (doc, docx, etc.)
+                    previewContainer.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #8c8c8c;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 16px;">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p style="font-size: 14px; font-weight: 600; color: #262626; margin-bottom: 8px;">${file.name}</p>
+                            <p style="font-size: 12px;">Không thể xem trước định dạng file này</p>
+                            <p style="font-size: 12px;">File sẽ được lưu khi bạn nhấn nút "Lưu"</p>
+                        </div>
+                    `;
+                    filePreview.style.display = 'block';
+                }
+            } else {
+                fileInfo.innerHTML = '<div style="color: #8c8c8c; font-style: italic;">Chưa có file nào được chọn</div>';
+                filePreview.style.display = 'none';
+            }
+        });
+
+        // Hàm xóa file
+        function deleteFile() {
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileInfo').innerHTML = '<div style="color: #8c8c8c; font-style: italic;">Chưa có file nào được chọn</div>';
+            document.getElementById('filePreview').style.display = 'none';
+            document.getElementById('previewContainer').innerHTML = '';
+        }
+
+        // Hàm lưu file
+
+
+        // Hàm reset form
+        function resetForm() {
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileInfo').innerHTML = '<div style="color: #8c8c8c; font-style: italic;">Chưa có file nào được chọn</div>';
+        }
+
+    </script>
     <script>
 
         // Hiển thị danh sách bệnh nhân
@@ -291,7 +559,9 @@
 
         // Hiển thị khi trang load
         hienThiBenhNhan();
+        hienThiKetQuaCLS();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
