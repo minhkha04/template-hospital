@@ -768,7 +768,7 @@
         function addDiagnosisRow() {
             const inputContainer = document.querySelector('.input_cdphu');
             const newRow = document.createElement('div');
-            newRow.className = 'd-flex align-items-center mb-1';
+            newRow.className = 'd-flex align-items-center mb-1 py-1';
             newRow.innerHTML = `
                 <button class="btn btn-sm btn-danger" type="button" onclick="removeDiagnosisRow(this)" style="height: 30px;">
                     <strong>−</strong>
@@ -893,6 +893,7 @@
         // Hiển thị khi trang load
         hienThiBenhNhan();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

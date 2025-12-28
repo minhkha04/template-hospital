@@ -340,3 +340,21 @@ const danhSachBenhNhan = [
     doiTuong: "Bệnh Nhân",
   },
 ];
+
+const danhSachBenhAn = [
+  { id: 1, tenBenhAn: "Viêm phổi", ngay: "2024-06-10" },
+  { id: 2, tenBenhAn: "Viêm gan B", ngay: "2024-08-15" },
+  { id: 3, tenBenhAn: "Đái tháo đường type 2", ngay: "2024-09-20" },
+  { id: 4, tenBenhAn: "Cao huyết áp", ngay: "2024-10-05" },
+  { id: 5, tenBenhAn: "Viêm dạ dày", ngay: "2024-11-12" },
+  { id: 6, tenBenhAn: "Viêm khớp", ngay: "2024-12-01" },
+  { id: 7, tenBenhAn: "Viêm gan C", ngay: "2025-01-08" },
+  { id: 8, tenBenhAn: "Hen suyễn", ngay: "2025-02-14" },
+  { id: 9, tenBenhAn: "Viêm họng", ngay: "2025-03-22" },
+  { id: 10, tenBenhAn: "Sốt xuất huyết", ngay: "2025-04-26" },
+  { id: 11, tenBenhAn: "Viêm phế quản", ngay: "2025-05-18" },
+  { id: 12, tenBenhAn: "Đau đầu migraine", ngay: "2025-06-30" },
+  { id: 13, tenBenhAn: "Viêm xoang", ngay: "2025-07-10" },
+  { id: 14, tenBenhAn: "Rối loạn tiêu hóa", ngay: "2025-08-25" },
+  { id: 15, tenBenhAn: "Viêm da", ngay: "2025-09-15" },
+];

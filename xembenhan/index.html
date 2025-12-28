@@ -247,8 +247,42 @@
                     </nav>
 
                     <div style="margin-top: 16px;">
-                        <h5 style="font-size: 16px; font-weight: 600; color: #262626;">Xem bệnh án đang được xây dựng...
-                        </h5>
+                        <div class="d-flex gap-2">
+                            <div class="bg-warning d-flex flex-column gap-1" style="width: 20%;">
+                                <div class="d-flex">
+                                    <div class="w-50">
+                                        Từ ngày
+                                    </div>
+                                    <div class="w-50">
+                                        <input type="date" class="form-control"
+                                            style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px;" />
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="w-50">
+                                        Đến ngày
+                                    </div>
+                                    <div class="w-50">
+                                        <input type="date" class="form-control"
+                                            style="height: 32px; border-radius: 6px; border: 1px solid #d9d9d9; font-size: 14px;" />
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-1">
+                                    <button class="btn btn-primary w-50">In</button>
+                                    <button class="btn btn-info w-50">Tìm kiếm</button>
+                                </div>
+                                <div id="danhSachBenhAnContainer" class="border-1 border-dark border"
+                                    style="max-height: 64vh; min-height: 64vh; overflow-y: auto;">
+                                </div>
+                                <div>
+                                    <button class="btn" style="background-color: gray; color: white; width: 100%;">Hiện
+                                        thị tất cả</button>
+                                </div>
+                            </div>
+                            <div class="w-75 bg-white">
+                                asda
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -258,6 +292,41 @@
 
     <script src="../data.js"></script>
     <script>
+
+        // Hiển thị danh sách bệnh án
+        function hienThiBenhAn() {
+            const container = document.getElementById('danhSachBenhAnContainer');
+            container.innerHTML = '';
+
+            danhSachBenhAn.forEach(ba => {
+                const div = document.createElement('div');
+                div.style.cssText = 'padding: 4px 6px; border-bottom: 1px solid #e8e8e8; cursor: pointer; transition: background-color 0.2s;';
+                div.onmouseover = function () { this.style.backgroundColor = '#f0f0f0'; };
+                div.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
+                div.onclick = function () { chonBenhAn(ba.id); };
+
+                div.innerHTML = `
+                    <p style="margin: 0; font-weight: 500; color: #262626; font-size: 13px;">${ba.tenBenhAn}</p>
+                    <p style="margin: 0; font-size: 12px; color: #8c8c8c;">${formatDate(ba.ngay)}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        // Chọn bệnh án
+        function chonBenhAn(id) {
+            console.log('Đã chọn bệnh án ID:', id);
+            // Thêm logic xử lý khi chọn bệnh án
+        }
 
         // Hiển thị danh sách bệnh nhân
         function hienThiBenhNhan() {
@@ -289,7 +358,9 @@
 
         // Hiển thị khi trang load
         hienThiBenhNhan();
+        hienThiBenhAn();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
